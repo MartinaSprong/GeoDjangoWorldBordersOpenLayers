@@ -20,7 +20,7 @@ def geojson(request):
     ly = WorldBorder.objects.filter(name = "Russia") # for selection of just one country
     djf = Django.Django(geodjango='mpoly', properties=['name'])
     geoj = GeoJSON.GeoJSON()
-    my_geojson = geoj.encode(djf.decode(ly))
+    my_geojson = geoj.encode(djf.decode(ly))   
     return render(request, "world/map.html", {'my_geojson': my_geojson})
 
     # using serializer! For creating GeoJSON from postGIS database
